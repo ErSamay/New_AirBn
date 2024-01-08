@@ -35,20 +35,8 @@ main().then(() => {
 });
 
 async function main() {
-    try {
-      await mongoose.connect(dbUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        writeConcern: {
-          w: 'majority'
-        }
-      });
-      console.log("MongoDB Connected");
-    } catch (error) {
-      console.error("Failed to connect to MongoDB:", error.message);
-     
-    }
-  }
+    await mongoose.connect(dbUrl)
+}
   
 
   
